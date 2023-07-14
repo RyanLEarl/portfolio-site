@@ -11,6 +11,7 @@ custom:
 provider:
   name: aws
   runtime: nodejs16.x
+  stage: main
   region: us-west-2
   
   stackTags:
