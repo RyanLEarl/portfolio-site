@@ -1,5 +1,8 @@
 directories = [
   '',
+  'Resume',
+  'Projects',
+  'References',
   'Contact'
   
 ]
