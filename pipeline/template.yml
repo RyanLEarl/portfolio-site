@@ -4,10 +4,10 @@ Description: github-codepipeline
 Parameters:
   GitHubRepo:
     Type: String
-    Default: <REPLACE_PROJECT_NAME>
+    Default: portfolio-site
   GitHubBranch:
     Type: String
-    Default: <REPLACE_BRANCH_NAME>
+    Default: main
 
 Resources:
   CloudFormationTrustRole:
@@ -128,19 +128,11 @@ Resources:
               OutputArtifacts:
                 - Name: !Join ["-", [!Ref "AWS::StackName", SourceArtifact]]
               Configuration:
-                Owner:  !Join 
-                  - ''
-                  - - '{{resolve:secretsmanager:'
-                    - !Ref GitHubRepo
-                    - '-githubPersonalAccess:SecretString:gitHubOwner}}'
+                Owner: "{{resolve:secretsmanager:githubPersonalAccess:SecretString:gitHubOwner}}"
                 Repo: !Ref GitHubRepo
                 Branch: !Ref GitHubBranch
                 PollForSourceChanges: false
-                OAuthToken:  !Join 
-                  - ''
-                  - - '{{resolve:secretsmanager:'
-                    - !Ref GitHubRepo
-                    - '-githubPersonalAccess:SecretString:gitHubOAuthToken}}'
+                OAuthToken: "{{resolve:secretsmanager:githubPersonalAccess:SecretString:gitHubOAuthToken}}"
               RunOrder: 1
         - Name: Build
           Actions:
