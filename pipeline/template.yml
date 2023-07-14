@@ -390,11 +390,7 @@ Resources:
     Properties:
       Authentication: GITHUB_HMAC
       AuthenticationConfiguration:
-        SecretToken: !Join 
-          - ''
-          - - '{{resolve:secretsmanager:'
-            - !Ref GitHubRepo
-            - '-githubPersonalAccess:SecretString:gitHubOAuthToken}}'
+        SecretToken: "{{resolve:secretsmanager:githubPersonalAccess:SecretString:gitHubOAuthToken}}"
       RegisterWithThirdParty: true
       Filters:
         - JsonPath: "$.ref"
