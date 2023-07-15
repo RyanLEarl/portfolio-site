@@ -4,10 +4,43 @@
     <script type="text/javascript" src="/index.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
     <script>createHead();</script>
+    <style>
+      /* Set the height of the object element to 100% of the viewport height */
+      object {
+        height: 100vh;
+      }
+    </style>
   </head>
   <header id="header">
     <script> createHeader();</script>
   </header>
   <body>
+    <main class="main-content">
+    
+      <object id="pdf-object" data="https://s3.us-west-2.amazonaws.com/ryanearlsoftwareengineer.com/assets/SE_Resume_July.pdf" type="application/pdf" width="100%">
+          <p>It appears you don't have a PDF plugin for this browser. You can <a href="https://s3.us-west-2.amazonaws.com/ryanearlsoftwareengineer.com/assets/SE_Resume_July.pdf">click here to download the PDF file.</a></p>
+      </object>
+
+      <!-- Add JavaScript to adjust the height of the object element -->
+      <script>
+        // Get a reference to the object element
+        const pdfObject = document.getElementById('pdf-object');
+
+        // Set the maximum height of the object element (in pixels)
+        const maxPdfHeight = 1000;
+
+        // Add an event listener to adjust the height of the object element when the window is resized
+        window.addEventListener('resize', () => {
+          // Calculate the new height of the object element
+          const newPdfHeight = Math.min(window.innerHeight, maxPdfHeight);
+
+          // Set the height of the object element
+          pdfObject.style.height = newPdfHeight + 'px';
+        });
+
+        // Trigger the resize event to set the initial height of the object element
+        window.dispatchEvent(new Event('resize'));
+      </script>
+    </main>
   </body>
 </html>
