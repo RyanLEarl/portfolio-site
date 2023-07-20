@@ -36,7 +36,6 @@ function createHeader() {
   nameWrapper.appendChild(name);
   nav.appendChild(nameWrapper);
 
-  // Create the hamburger menu button
   var hamburgerMenu = document.createElement("button");
   hamburgerMenu.setAttribute("class", "hamburger-menu");
   hamburgerMenu.setAttribute("onclick", "toggleMenu()");
@@ -52,17 +51,34 @@ function createHeader() {
   menu.setAttribute("class", "menu");
   var ul = document.createElement("ul");
   ul.setAttribute("class", "links");
+
+  function handleButtonClick(event) {
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach((button, index) => {
+      button.classList.remove('active');
+      if (button === event.target) {
+        localStorage.setItem('activeButtonIndex', index);
+      }
+    });
+    event.target.classList.add('active');
+  }
+
   for (i = 0; i<= getDirectories.length-1; i++) {
     var list = document.createElement("li");
     list.setAttribute("class", "link-wrapper");
     var item = document.createElement("a");
     item.setAttribute("class", "btn");
+    item.addEventListener('click', handleButtonClick);
     if (getDirectories[i] == "") {
       getDirectories[i] = "Home";
       item.setAttribute("href", "/");
     }
     else {
       item.setAttribute("href", "/pages/"+getDirectories[i]);
+    }
+    const activeButtonIndex = localStorage.getItem('activeButtonIndex');
+    if (i === parseInt(activeButtonIndex)) {
+      item.classList.add('active');
     }
     item.innerHTML = getDirectories[i];
     list.appendChild(item)

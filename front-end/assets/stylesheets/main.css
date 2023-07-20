@@ -200,7 +200,11 @@ li a {
 }
 
 .btn.active {
-  background-color: #002cbd;
+  color: white;
+  padding: 1px 15px;
+  background-color: var(--nav-secondary-color);
+  border-radius: 10px;
+  opacity: 0.8;
 }
 
 /* ******************************** HOME PAGE ******************************* */
@@ -305,6 +309,7 @@ li a {
 .button:hover {
   background-color: #555;
 }
+
 /* ******************************** PROJECT PAGE ******************************* */
   #repository-list {
     list-style: none;
