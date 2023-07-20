@@ -4,43 +4,66 @@
     <script type="text/javascript" src="/index.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
     <script>createHead();</script>
-    <style>
-      /* Set the height of the object element to 100% of the viewport height */
-      object {
-        height: 100vh;
-      }
-    </style>
   </head>
   <header id="header">
     <script> createHeader();</script>
   </header>
   <body>
     <main class="main-content">
-    
-      <object id="pdf-object" data="https://s3.us-west-2.amazonaws.com/ryanearlsoftwareengineer.com/assets/SE_Resume_July.pdf" type="application/pdf" width="100%">
-          <p>It appears you don't have a PDF plugin for this browser. You can <a href="https://s3.us-west-2.amazonaws.com/ryanearlsoftwareengineer.com/assets/SE_Resume_July.pdf">click here to download the PDF file.</a></p>
-      </object>
+      <h1>RYAN EARL - SOFTWARE ENGINEER</h1>
+      <p>Software Engineer with a passion for improving user experiences through refactoring systems and improved web design</p>
+      <p>ryanleoearl@gmail.com | 503-869-8875 | github.com/hoboson02 | Linkedin.com/in/ryanleoearl</p>
+      <h2>EDUCATION</h2>
+      <h3>B.S. COMPUTER SCIENCE Oregon State University-Cascades</h3>
+      <ul>
+        <li>Graduated June 2023</li>
+        <li>GPA: 3.60</li>
+      </ul>
 
-      <!-- Add JavaScript to adjust the height of the object element -->
-      <script>
-        // Get a reference to the object element
-        const pdfObject = document.getElementById('pdf-object');
+      <h2>EXPERIENCE</h2>
+      <h3>Software Engineer Intern - Les Schwab Tire Centers, September 2022 – July 2023</h3>
+      <ul>
+        <li>Developed projects for Les Schwab Tire Centers’ Chief Digital Officer using Agile development practices within AWS (Data analysis, value proposition, JavaScript, React, Okta OAuth 2.0)
+          <ul>
+            <li>Leveraged IFTTT, Amazon Pinpoint, AWS Lambda, CloudFormation, and Amazon SNS to toggle a smart plug based on online payment of an invoice to visually notify employees</li>
+            <li>Adapted projects to meet continuously shifting needs from senior leadership</li>
+          </ul>
+        </li>
+        <li>Implemented data processing pipeline consisting of a Python Lambda for pulling data from an API, scripted generation of vulnerability reports for multiple portfolios, processed exclusions, and cleaned vulnerability scans into a more consumable format in dynamodb and ServiceNow via a two-way database mirroring pipeline</li>
+      </ul>
 
-        // Set the maximum height of the object element (in pixels)
-        const maxPdfHeight = 1000;
+      <h3>ITSM Analyst Intern – Les Schwab Tire Centers, June 2022 – September 2022</h3>
+      <ul>
+        <li>Automated migration of electronic knowledge articles into a central ServiceNow Knowledge Base
+          <ul>
+            <li>Created documentation to help future users understand the documentation creation tool</li>
+            <li>Worked with users to ensure all needs were met and adjusted functionality where needed</li>
+          </ul>
+        </li>
+      </ul>
 
-        // Add an event listener to adjust the height of the object element when the window is resized
-        window.addEventListener('resize', () => {
-          // Calculate the new height of the object element
-          const newPdfHeight = Math.min(window.innerHeight, maxPdfHeight);
+      <h3>Esports Program President – OSU September 2019 – September 2022</h3>
+      <ul>
+        <li>Acquired funding of approximately $8,000 from Oregon State University in September of 2020</li>
+        <li>Led and coached OSU-Cascades’ inaugural Rocket League team</li>
+      </ul>
 
-          // Set the height of the object element
-          pdfObject.style.height = newPdfHeight + 'px';
-        });
+      <h2>SKILLS</h2>
+      Programming Languages: JavaScript, Node, React, HTML, CSS, Raku, Ruby, Python, Java, PHP, C, MySQL, R
+      Technical: AWS, GitHub, Frameworks (Bootstrap)
+      Leadership: Vice President of Cascades Gaming Club (May 2019-September 2022), Captain of Rocket League Esports team (October 2019- September 2021), Head of Esports at OSU Cascades (October 2019- September 2022).
 
-        // Trigger the resize event to set the initial height of the object element
-        window.dispatchEvent(new Event('resize'));
-      </script>
+      <h2>PERSONAL PROJECTS</h2>
+
+      Automated creation of a holiday gift list in a website format
+      Coded a JavaScript tool for searching webpages for item prices and returns it into a database table
+      Displays data in an interactive form from a database utilizing PHP, SQL, CSS, HTML, and Dreamhost
+
+Built GitHub to AWS CICD Pipeline for Smart Dog Collar senior capstone project
+Led AWS development and created entire back-end for a notification application
+Developed mobile application using Amplify Studio, Jira, and Firebase Cloud Messaging
+
+Guest Lectured at OSU-Cascades on the topic of AWS CICD Pipelines and their application in implementing a REST API with API Gateway, Dynamodb, AWS Lambda, and S3 for front-end
     </main>
   </body>
 </html>
