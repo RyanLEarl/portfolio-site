@@ -29,7 +29,14 @@ h1 {
   font-family: 'Source Sans Pro',sans-serif;
 }
 h2 {
-    text-align: center;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
 a { 
@@ -53,7 +60,12 @@ h1 {
 }
 
 .main-content {
+  padding: 0 4vw;
   padding-top: 100px;
+}
+
+.main-content ul{
+  padding-left: 20px;
 }
 
 /* ******************************** NAVBAR ******************************* */
@@ -111,11 +123,11 @@ h1:hover {
   filter: grayscale(15%);
 }
 
-li {
+.link-wrapper {
   list-style: none;
 }
 
-li a {
+.link-wrapper a {
   display: block;
   color: rgb(0, 0, 0);
   text-align: center;
@@ -310,26 +322,51 @@ li a {
   background-color: #555;
 }
 
+/* ******************************** RESUME PAGE ******************************* */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+.skill {
+  padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
+  margin-right: 1.5rem;
+  font-size: 1.6rem;
+  background: rgba(153,153,153,.2);
+  border-radius: 5px;
+  font-weight: 600;
+  color: #666;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10rem;
+}
+
+.main-content a:hover {
+  color: var(--nav-secondary-color);
+}
 /* ******************************** PROJECT PAGE ******************************* */
-  #repository-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+#repository-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  #repository-list li {
-    margin-bottom: 10px;
-  }
+#repository-list li {
+  margin-bottom: 10px;
+}
 
-  #repository-list a {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: var(--element-bg-color);
-    color: var(--nav-text-color);
-    text-decoration: none;
-    border-radius: 5px;
-  }
+#repository-list a {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: var(--element-bg-color);
+  color: var(--nav-text-color);
+  text-decoration: none;
+  border-radius: 5px;
+}
 
-  #repository-list a:hover {
-    background-color: var(--element-bg-color-hover);
-  }
+#repository-list a:hover {
+  background-color: var(--element-bg-color-hover);
+}
