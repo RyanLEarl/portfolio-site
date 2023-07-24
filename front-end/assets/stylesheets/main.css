@@ -215,7 +215,7 @@ h1:hover {
   color: white;
   padding: 1px 15px;
   background-color: var(--nav-secondary-color);
-  border-radius: 10px;
+  border-radius: 5px;
   opacity: 0.8;
 }
 
@@ -323,6 +323,11 @@ h1:hover {
 }
 
 /* ******************************** RESUME PAGE ******************************* */
+.about {
+  justify-content: center;
+  align-items: center;
+}
+
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -338,15 +343,33 @@ h1:hover {
   color: #666;
 }
 
-.about {
+.about_item {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10rem;
+  /* grid-template-columns: 1fr 1fr; */
+  /* grid-gap: 10rem; */
+  float: left;
+  width: 50%;
+  margin-bottom: 16px;
+  padding: 0 8px; 
+  max-width:800px;
 }
 
 .main-content a:hover {
   color: var(--nav-secondary-color);
 }
+
+@media screen and (max-width: 1200px) {
+  .about_item {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* .members::after {
+  content: "";
+  clear: both;
+  display: table;
+} */
 /* ******************************** PROJECT PAGE ******************************* */
 #repository-list {
   list-style: none;
