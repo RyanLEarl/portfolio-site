@@ -1,10 +1,9 @@
 directories = [
   '',
   'Resume',
-  'Projects',
+  // 'Projects',
   'References',
   'Contact'
-  
 ]
 
 var getDirectories = directories;
