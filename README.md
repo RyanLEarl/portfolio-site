@@ -9,6 +9,7 @@ This site uses...
   - JavaScript
   - CSS
   - HTML 
+  
 All of the AWS components are coded in... 
   - JavaScript
   - JSON
