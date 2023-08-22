@@ -395,3 +395,30 @@ h1:hover {
 #repository-list a:hover {
   background-color: var(--secondary-color);
 }
+
+/* ******************************** REFERENCES PAGE ******************************* */
+
+.reference-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reference-item {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.reference-title {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.reference-linkedin a {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.testimonial-details b {
+  color: var(--secondary-color);
+}
