@@ -5,7 +5,15 @@ http://ryanearlsoftwareengineer.com/
 ## Tech Stack
 
 ### Languages
-This site uses JavaScript, CSS, and HTML for the webpage component. All of the AWS components are coded in JavaScript, JSON, YML, and bash scripts. 
+This site uses... 
+  - JavaScript
+  - CSS
+  - HTML 
+All of the AWS components are coded in... 
+  - JavaScript
+  - JSON
+  - YML
+  - bash scripts. 
 
 ### AWS
 All of the web hosting, domain registration, and back-end functionality exists in AWS.
