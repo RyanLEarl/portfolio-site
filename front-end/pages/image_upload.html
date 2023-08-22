@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head id="head">
+    <script type="text/javascript" src="/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+    <script>createHead();</script>
+  </head>
+  <header id="header">
+    <script> createHeader();</script>
+  </header>
+  <body>
+    <main class="main-content">
+      <form id="uploadForm">
+        <label for="businessId">Business ID:</label><br />
+        <input type="text" id="businessId" name="businessId" /><br />
+        <label for="imageFile">Image:</label><br />
+        <input type="file" id="imageFile" accept="image/*" /><br />
+        <input type="submit" value="Upload" />
+      </form>
+
+      <div id="imageContainer"></div>
+
+      <script>
+        document.getElementById('uploadForm').addEventListener('submit', (event) => {
+          event.preventDefault();
+          const businessId = document.getElementById('businessId').value;
+          const file = document.getElementById('imageFile').files[0];
+          const reader = new FileReader();
+          reader.onloadend = function() {
+            fetch(`https://6wh3dsetqa.execute-api.us-west-2.amazonaws.com/main/business/${businessId}/photos`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'image/png'
+              },
+              body: reader.result
+            })
+              .then((response) => response.text())
+              .then((data) => {
+                console.log(data);
+                const imageUrls = data.match(/https?:\/\/[^ }\""]+/g);
+                const imageContainer = document.getElementById('imageContainer');
+                imageContainer.innerHTML = '';
+                const secondImageUrl = imageUrls[0];
+                const img = document.createElement('img');
+                img.setAttribute('src', secondImageUrl);
+                img.setAttribute('style', 'max-width: 600px;');
+                imageContainer.appendChild(img);
+              })
+              .catch((error) => console.error(error));
+          };
+          reader.readAsArrayBuffer(file);
+        });
+      </script>
+    </main>
+  </body>
+</html>
