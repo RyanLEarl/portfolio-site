@@ -3,13 +3,32 @@
   <head id="head">
     <script type="text/javascript" src="/index.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+    <script>
+      window.addEventListener('load', function() {
+        var textarea = document.querySelector('#message');
+        var nameInput = document.querySelector('#name');
+        var emailInput = document.querySelector('#email');
+        
+        textarea.addEventListener('mouseup', function() {
+          nameInput.style.width = textarea.offsetWidth + 'px';
+          emailInput.style.width = textarea.offsetWidth + 'px';
+        });
+      });
+    </script>
     <script>createHead();</script>
   </head>
   <header id="header">
     <script> createHeader();</script>
   </header>
-  <body class="introduction">
+  <body>
     <main class="main-content">
+      <h1>CONTACT</h1>
+      <form id="contact-form" action="mailto:ryanleoearl@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" id="name" name="name" placeholder="Name"><br>
+        <input type="text" id="email" name="email" placeholder="Email"><br><br>
+        <textarea id="message" name="message" placeholder="Message"></textarea><br><br>
+        <input type="submit" value="Send">
+      </form>   
     </main>
   </body>
 </html>

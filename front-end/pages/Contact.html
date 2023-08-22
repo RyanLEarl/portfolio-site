@@ -3,6 +3,18 @@
   <head id="head">
     <script type="text/javascript" src="/index.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+    <script>
+      window.addEventListener('load', function() {
+        var textarea = document.querySelector('#message');
+        var nameInput = document.querySelector('#name');
+        var emailInput = document.querySelector('#email');
+        
+        textarea.addEventListener('mouseup', function() {
+          nameInput.style.width = textarea.offsetWidth + 'px';
+          emailInput.style.width = textarea.offsetWidth + 'px';
+        });
+      });
+    </script>
     <script>createHead();</script>
   </head>
   <header id="header">
@@ -10,18 +22,13 @@
   </header>
   <body>
     <main class="main-content">
-      <div class="member">
-        <div class="card">
-          <img src="/assets/images/ryan.jpg" alt="Ryan">
-          <div class="container">
-            <h2>Ryan Earl</h2>
-            <p class="title">Software Engineer</p>
-            <p>Solving complex problems with elegant code</p>
-            <p>ryanleoearl@gmail.com</p>
-            <p><button onclick="window.location.href='https://www.linkedin.com/in/ryanleoearl/';" class="button">Contact</button></p>
-          </div>
-        </div>
-      </div>
+      <h1>CONTACT</h1>
+      <form id="contact-form" action="mailto:ryanleoearl@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" id="name" name="name" placeholder="Name"><br>
+        <input type="text" id="email" name="email" placeholder="Email"><br><br>
+        <textarea id="message" name="message" placeholder="Message"></textarea><br><br>
+        <input type="submit" value="Send">
+      </form>   
     </main>
   </body>
 </html>
