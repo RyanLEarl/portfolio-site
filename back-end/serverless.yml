@@ -37,6 +37,10 @@ provider:
         - "secretsmanager:GetSecretValue"
       Resource:
         - !Sub arn:aws:secretsmanager:${self:provider.region}:${AWS::AccountId}:secret:${self:service}-*
+    - Effect: "Allow"
+      Action:
+        - "ses:SendEmail"
+      Resource: "*"
 
 functions:
   - ${file(cloudformation/functions.yml)}
