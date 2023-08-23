@@ -1,3 +1,5 @@
+const API_BASE_URL = 'https://5t6a4mxr4k.execute-api.us-west-2.amazonaws.com/main';
+
 directories = [
   '',
   'Resume',
@@ -92,4 +94,31 @@ function toggleMenu() {
   console.log('toggleMenu function called');
   var navMenu = document.querySelector('.menu');
   navMenu.classList.toggle('show');
+}
+
+document.querySelector('#contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  var senderName = document.querySelector('#name').value;
+  var senderEmail = document.querySelector('#email').value;
+  var message = document.querySelector('#message').checked;
+  sendPostEmail(senderName, senderEmail, message);
+});
+
+function sendPostEmail(senderName, senderEmail, message) {
+  fetch(API_BASE_URL, {
+  method: "POST",
+  body: JSON.stringify({
+    senderName: senderName,
+    senderEmail: senderEmail,
+    message: message
+  }),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8"
+  }
+})
+.then(response => response.text())
+  .then(text => {
+    // Display the return message here
+    document.querySelector('#return-message').textContent = text;
+  });
 }
