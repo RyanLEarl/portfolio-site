@@ -8,7 +8,7 @@ Resources:
         Types:
           - REGIONAL
   MyRestApiNowDeployment: 
-    DependsOn: UserGetMethod
+    DependsOn: PostMethod
     Type: AWS::ApiGateway::Deployment
     Properties: 
       RestApiId: !Ref MyRestApi
