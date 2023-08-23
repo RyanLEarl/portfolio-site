@@ -43,6 +43,7 @@ functions:
 
 resources: 
   - ${file(cloudformation/resources.yml)}
+  - ${file(cloudformation/apiGateway.yml)}
 
 plugins:
   - serverless-webpack

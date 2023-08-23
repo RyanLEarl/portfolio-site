@@ -1,0 +1,44 @@
+Resources:
+  MyRestApi:
+    Type: 'AWS::ApiGateway::RestApi'
+    Properties:
+      Name: !Sub ${self:service}-${self:provider.stage}-${AWS::AccountId}-rest-api
+      Description: My REST API
+      EndpointConfiguration:
+        Types:
+          - REGIONAL
+  MyRestApiNowDeployment: 
+    DependsOn: UserGetMethod
+    Type: AWS::ApiGateway::Deployment
+    Properties: 
+      RestApiId: !Ref MyRestApi
+      StageName: main
+
+  MethodExecutionRole:
+      Type: AWS::IAM::Role
+      Properties:
+        AssumeRolePolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Effect: "Allow"
+              Principal:
+                Service: apigateway.amazonaws.com
+              Action: "sts:AssumeRole"
+  PostMethod:
+    DependsOn: MethodExecutionRole
+    Type: 'AWS::ApiGateway::Method'
+    Properties:
+      AuthorizationType: NONE
+      HttpMethod: POST
+      ResourceId: !Ref MyRestApi.RootResourceId
+      RestApiId: !Ref MyRestApi
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Join
+          - ''
+          - - 'arn:aws:apigateway:'
+            - !Ref 'AWS::Region'
+            - ':lambda:path/2015-03-31/functions/'
+            - !Sub arn:aws:lambda:${self:provider.region}:${AWS::AccountId}:function:${self:service}-${self:provider.stage}-processEmail
+            - '/invocations'
