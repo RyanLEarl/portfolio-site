@@ -15,22 +15,22 @@ Resources:
       StageName: main
 
   MethodExecutionRole:
-      Type: AWS::IAM::Role
-      Properties:
-        AssumeRolePolicyDocument:
-          Version: "2012-10-17"
-          Statement:
-            - Effect: "Allow"
-              Principal:
-                Service: apigateway.amazonaws.com
-              Action: "sts:AssumeRole"
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Service: apigateway.amazonaws.com
+            Action: "sts:AssumeRole"
   PostMethod:
     DependsOn: MethodExecutionRole
     Type: 'AWS::ApiGateway::Method'
     Properties:
       AuthorizationType: NONE
       HttpMethod: POST
-      ResourceId: !Ref MyRestApi.RootResourceId
+      ResourceId: !GetAtt MyRestApi.RootResourceId
       RestApiId: !Ref MyRestApi
       Integration:
         Type: AWS_PROXY
