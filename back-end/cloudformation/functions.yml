@@ -1,3 +1,6 @@
 test:
   handler: src/functions/test.handler
   timeout: 30
+processEmail:
+  handler: src/functions/processEmail.handler
+  timeout: 30
