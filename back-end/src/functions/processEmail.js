@@ -1,5 +1,9 @@
 const aws = require("aws-sdk");
 const ses = new aws.SES({ region: "us-west-2" });
+const response = {
+  isBase64Encoded: false,
+  headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Credentials": true}
+};
 exports.handler = async function (event) {
   try {
     console.log('EVENT: ', event)
@@ -21,16 +25,14 @@ exports.handler = async function (event) {
       },
       Source: "ryanearlsoftwareengineer@gmail.com",
     };
-    ses.sendEmail(params).promise();
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: 'Email sent successfully' })
-    };
+    const sesReponse = await ses.sendEmail(params).promise();
+    console.log(sesReponse);
+    response.statusCode = 200;
+    response.body = JSON.stringify({ message: 'Email sent successfully' });
   } catch (error) {
     console.error(error);
-    return {
-      statusCode: 500,
-      body:JSON.stringify({message: 'An error occurred while attempting to send the email'})
-    }
+    response.statusCode = 500;
+    response.body = JSON.stringify({message: 'An error occurred while attempting to send the email'});
   }
+  return response;
 };

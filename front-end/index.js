@@ -96,12 +96,15 @@ function toggleMenu() {
   navMenu.classList.toggle('show');
 }
 
-document.querySelector('#contact-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  var senderName = document.querySelector('#name').value;
-  var senderEmail = document.querySelector('#email').value;
-  var message = document.querySelector('#message').checked;
-  sendPostEmail(senderName, senderEmail, message);
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('contact-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const senderName = document.getElementById('name').value;
+    const senderEmail = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    console.log(`senderName: ${senderName}\n senderEmail: ${senderEmail}\n message: ${message}`)
+    sendPostEmail(senderName, senderEmail, message);
+  });
 });
 
 function sendPostEmail(senderName, senderEmail, message) {
