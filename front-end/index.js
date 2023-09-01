@@ -104,6 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const message = document.getElementById('message').value;
     console.log(`senderName: ${senderName}\n senderEmail: ${senderEmail}\n message: ${message}`)
     sendPostEmail(senderName, senderEmail, message);
+    document.getElementById("thank-you-message").innerHTML = "Thanks for your message. \nI'll get back to you shortly";
+    document.getElementById('contact-form').style.display = 'none';
   });
 });
 
