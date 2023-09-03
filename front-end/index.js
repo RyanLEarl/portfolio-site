@@ -173,8 +173,8 @@ function sendPostEmail(senderName, senderEmail, message) {
   });
 }
 
-function createSkillsRatings() {
-  var list = document.querySelector("#skillsRatings");
+function createSkillRatings() {
+  var list = document.querySelector("#skillRatings");
   
   // Clear the list
   while (list.firstChild) {
