@@ -229,9 +229,41 @@ h1:hover {
   margin: 0 auto 20px;
   margin-bottom: 20px;
   line-height: 1.5;
+}
+
+.programming-skills-page .rating {
+  display: inline-block;
+  font-size: 40px;
+}
+.programming-skills-page .filled {
+  color: var(--secondary-color);
+}
+.programming-skills-page .empty {
+  color: #dcdcdc;
+}
+.programming-skills-page ul {
+  list-style-type: none;
+}
+.programming-skills-page li {
+  font-size: 32px;
+}
+.programming-skills-page .container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.programming-skills-page .left-column,
+.programming-skills-page .right-column {
+  flex: 1;
+  max-width: 600px;
   text-align: center;
 }
 
+@media (max-width: 600px) {
+  .programming-skills-page .container {
+    flex-direction: column;
+  }
+}
 
 /* ******************************** CONTACT PAGE ******************************* */
 
