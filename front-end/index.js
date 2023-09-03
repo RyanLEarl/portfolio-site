@@ -90,6 +90,41 @@ function createHeader() {
   header.appendChild(nav);
 }
 
+function createFooter() {
+  const footer = document.getElementById("footer");
+  var icons = document.createElement("div")
+  icons.classList.add('icons')
+  var linkedInIcon = document.createElement("a")
+  
+  var gitHubIcon = document.createElement("a")
+  var iconsArray = [
+    {
+      'element': linkedInIcon,
+      'link' : 'https://www.linkedin.com/in/ryanleoearl/', 
+      'class': 'linkedin'
+    }, 
+    {
+      'element': gitHubIcon,
+      'link' : 'https://github.com/Hoboson02', 
+      'class': 'github'
+    }
+  ]
+  for (const icon of iconsArray) {
+    icon.element.setAttribute('target', '_blank')
+    icon.element.setAttribute('href', icon.link)
+    icon.element.classList.add('fa', `fa-${icon.class}`)
+    icons.appendChild(icon.element)
+  }
+  footer.appendChild(icons);
+  var info = document.createElement("div");
+  info.classList.add('info');
+  var footnote = document.createElement("div");
+  footnote.classList.add('footnote');
+  footnote.innerHTML = "RYAN EARL <span class='year'>&#169;2023</span>"
+  info.appendChild(footnote)
+  footer.appendChild(info)
+}
+
 function toggleMenu() {
   console.log('toggleMenu function called');
   var navMenu = document.querySelector('.menu');
