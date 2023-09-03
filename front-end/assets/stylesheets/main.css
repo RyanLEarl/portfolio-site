@@ -259,6 +259,10 @@ h1:hover {
   text-align: center;
 }
 
+.programming-skills-page .container h2 {
+  font-size: clamp(24px, calc(24px + 1vw), 36px);
+}
+
 @media (max-width: 600px) {
   .programming-skills-page .container {
     flex-direction: column;
