@@ -233,6 +233,7 @@ h1:hover {
 
 .programming-skills-page .rating {
   display: inline-block;
+  margin-left: 10px;
   font-size: clamp(32px, calc(32px + 1vw), 40px);
 }
 .programming-skills-page .filled {

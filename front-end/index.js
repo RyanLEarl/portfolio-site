@@ -8,6 +8,13 @@ directories = [
   // 'Contact'
 ]
 
+var languages = [
+  {name: "AWS", rating: 5},
+  {name: "Python", rating: 4},
+  {name: "JavaScript", rating: 4},
+  {name: "Ruby", rating: 3}
+];
+
 var getDirectories = directories;
 
 function createHead() {
@@ -161,4 +168,35 @@ function sendPostEmail(senderName, senderEmail, message) {
     // Display the return message here
     document.querySelector('#return-message').textContent = text;
   });
+}
+
+function createLanguageRatings() {
+  var list = document.querySelector("#languageRatings");
+  
+  // Clear the list
+  while (list.firstChild) {
+      list.removeChild(list.firstChild);
+  }
+  
+  for (var i = 0; i < languages.length; i++) {
+    var listItem = document.createElement("li");
+    listItem.textContent = languages[i].name;
+    
+    var ratingDiv = document.createElement("div");
+    ratingDiv.className = "rating";
+    
+    for (var j = 0; j < 5; j++) {
+      var span = document.createElement("span");
+      if (j < languages[i].rating) {
+        span.className = "filled";
+      } else {
+        span.className = "empty";
+      }
+      span.innerHTML = "&bull;";
+      ratingDiv.appendChild(span);
+    }
+    
+    listItem.appendChild(ratingDiv);
+    list.appendChild(listItem);
+  }
 }
