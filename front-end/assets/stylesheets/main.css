@@ -233,7 +233,7 @@ h1:hover {
 
 .programming-skills-page .rating {
   display: inline-block;
-  font-size: 40px;
+  font-size: clamp(32px, calc(32px + 1vw), 40px);
 }
 .programming-skills-page .filled {
   color: var(--secondary-color);
@@ -245,7 +245,7 @@ h1:hover {
   list-style-type: none;
 }
 .programming-skills-page li {
-  font-size: 32px;
+  font-size: clamp(16px, calc(16px + 1vw), 32px);
 }
 .programming-skills-page .container {
   display: flex;
