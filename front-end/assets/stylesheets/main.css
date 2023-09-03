@@ -423,6 +423,10 @@ h1:hover {
 }
 
 /* ******************************** FOOTER ******************************* */
+.clear {
+  clear: both;
+  height: 100px;
+}
 
 #footer {
   position: absolute;
