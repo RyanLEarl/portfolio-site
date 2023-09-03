@@ -8,11 +8,14 @@ directories = [
   // 'Contact'
 ]
 
-var languages = [
+var skills = [
   {name: "AWS", rating: 5},
   {name: "Python", rating: 4},
   {name: "JavaScript", rating: 4},
-  {name: "Ruby", rating: 3}
+  {name: "HTML", rating: 4},
+  {name: "CSS", rating: 4},
+  {name: "Ruby", rating: 3},
+  {name: "React", rating: 2}
 ];
 
 var getDirectories = directories;
@@ -170,24 +173,24 @@ function sendPostEmail(senderName, senderEmail, message) {
   });
 }
 
-function createLanguageRatings() {
-  var list = document.querySelector("#languageRatings");
+function createSkillsRatings() {
+  var list = document.querySelector("#skillsRatings");
   
   // Clear the list
   while (list.firstChild) {
       list.removeChild(list.firstChild);
   }
   
-  for (var i = 0; i < languages.length; i++) {
+  for (var i = 0; i < skills.length; i++) {
     var listItem = document.createElement("li");
-    listItem.textContent = languages[i].name;
+    listItem.textContent = skills[i].name;
     
     var ratingDiv = document.createElement("div");
     ratingDiv.className = "rating";
     
     for (var j = 0; j < 5; j++) {
       var span = document.createElement("span");
-      if (j < languages[i].rating) {
+      if (j < skills[i].rating) {
         span.className = "filled";
       } else {
         span.className = "empty";
