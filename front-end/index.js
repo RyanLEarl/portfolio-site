@@ -203,3 +203,26 @@ function createSkillRatings() {
     list.appendChild(listItem);
   }
 }
+
+function isAtTop(element) {
+  const rect = element.getBoundingClientRect();
+  console.log(`Element ${element.id} rect.top: ${rect.top}`);
+  return rect.top <= 105;
+}
+
+function updateAboutItemClass() {
+  console.log('Updating about_item class');
+  const aboutItems = document.querySelectorAll('.about_item');
+  aboutItems.forEach((item) => {
+    if (isAtTop(item)) {
+      console.log(`Adding at-top class to element ${item.id}`);
+      item.classList.add('at-top');
+    } else {
+      console.log(`Removing at-top class from element ${item.id}`);
+      item.classList.remove('at-top');
+    }
+  });
+}
+
+window.addEventListener('load', updateAboutItemClass);
+window.addEventListener('resize', updateAboutItemClass);
