@@ -409,6 +409,28 @@ div.about_item + div.about_item {
   clear: both;
   display: table;
 }
+
+.download-button {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: var(--element-bg-color);
+  color: var(--text-color) !important;
+  border-radius: 5px;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.download-button:hover {
+  opacity: 0.7;
+}
+
+.download-button-container {
+  display: flex;
+  justify-content: center;
+}
 /* ******************************** PROJECT PAGE ******************************* */
 #repository-list {
   list-style: none;
