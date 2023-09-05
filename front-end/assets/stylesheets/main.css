@@ -375,6 +375,14 @@ div.about_item + div.about_item {
   padding-right: 10px;
 }
 
+.certifications_content {
+  display: flex;
+}
+
+.certifications_content ul {
+  margin-right: 20px;
+}
+
 .about_item h2 {
   margin-top: 0;
   padding-top: 0;
