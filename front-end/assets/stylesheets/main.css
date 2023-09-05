@@ -286,8 +286,20 @@ h1:hover {
   margin-bottom: 50px;
 }
 
+.diagram p {
+  display: inline;
+}
+
 .architecture_diagrams {
   margin-bottom: 100px;
+}
+
+.diagram .fa {
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  text-align: center;
+  border-radius: 50%;
 }
 
 /* ******************************** CONTACT PAGE ******************************* */
@@ -391,7 +403,7 @@ div.about_item + div.about_item {
   line-height: 1.2;
 }
 
-.main-content a {
+.main-content a:not(.fa) {
   color: var(--secondary-color);
 }
 
