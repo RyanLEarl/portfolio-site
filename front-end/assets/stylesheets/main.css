@@ -246,7 +246,7 @@ h1:hover {
 .programming-skills-page ul {
   list-style-type: none;
 }
-.programming-skills-page li {
+#skillRatings li {
   font-size: clamp(16px, calc(16px + 1vw), 32px);
 }
 .programming-skills-page .container {
@@ -327,6 +327,7 @@ h1:hover {
   margin: 5px 0 0 0;
   outline: 0;
   padding: 10px 30px;
+  cursor: pointer;
 }
 
 #contact-form textarea {
@@ -437,7 +438,7 @@ div.about_item + div.about_item {
   transform: translateX(-50%);
 }
 
-.download-button:hover {
+a:hover, input[type="submit"]:hover {
   opacity: 0.7;
 }
 
