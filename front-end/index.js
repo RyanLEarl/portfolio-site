@@ -9,11 +9,11 @@ directories = [
 ]
 
 var skills = [
-  {name: "AWS", rating: 5},
+  {name: "AWS", rating: 4},
   {name: "Python", rating: 4},
   {name: "JavaScript", rating: 4},
-  {name: "HTML", rating: 4},
-  {name: "CSS", rating: 4},
+  {name: "HTML", rating: 3},
+  {name: "CSS", rating: 3},
   {name: "Ruby", rating: 3},
   {name: "React", rating: 2}
 ];
@@ -207,7 +207,7 @@ function createSkillRatings() {
 function isAtTop(element) {
   const rect = element.getBoundingClientRect();
   console.log(`Element ${element.id} rect.top: ${rect.top}`);
-  return rect.top <= 105;
+  return rect.top <= 205;
 }
 
 function updateAboutItemClass() {

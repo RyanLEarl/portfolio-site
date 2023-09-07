@@ -426,7 +426,7 @@ div.about_item + div.about_item {
 
 .download-button {
   padding: 10px 20px;
-  font-size: var(--page-font-size);
+  font-size: var(--page-header-font-size);
   background-color: var(--element-bg-color);
   color: var(--text-color) !important;
   border-radius: 5px;
