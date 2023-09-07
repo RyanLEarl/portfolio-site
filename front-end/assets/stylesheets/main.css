@@ -273,25 +273,31 @@ h1:hover {
 
 .architecture_diagrams {
   font-size: var(--page-font-size);
+  margin-bottom: 100px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+@media (max-width: 600px) {
+  .architecture_diagrams {
+    margin-left: 0%;
+    margin-right: 0%;
+  }
 }
 
 .architecture_diagrams img {
   min-width: 300px;
   max-width: 1000px;
   width: 100%;
+  text-align: center;
 }
 
 .diagram {
-  text-align: center;
   margin-bottom: 50px;
 }
 
 .diagram p {
   display: inline;
-}
-
-.architecture_diagrams {
-  margin-bottom: 100px;
 }
 
 .diagram .fa {
@@ -302,6 +308,13 @@ h1:hover {
   border-radius: 50%;
 }
 
+details summary + * {
+  margin-top: 10px;
+}
+
+summary::marker {
+  color: var(--secondary-color);
+}
 /* ******************************** CONTACT PAGE ******************************* */
 
 #contact-form {
