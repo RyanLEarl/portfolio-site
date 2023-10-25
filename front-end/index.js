@@ -141,12 +141,23 @@ function toggleMenu() {
   navMenu.classList.toggle('show');
 }
 
+/* ******************************** CONTACT ******************************* */
+
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('contact-form').addEventListener('submit', async function(event) {
     event.preventDefault();
     const senderName = document.getElementById('name').value;
     const senderEmail = document.getElementById('email').value;
     const message = document.getElementById('message').value;
+    if (!senderName || !senderEmail || !message) {
+      alert("All fields must be filled out");
+      return;
+    }
+    var regex = /\w+@\w+\.com/;
+    if (!regex.test(senderEmail)) {
+      alert("Must be a valid email format");
+      return;
+    }
     console.log(`senderName: ${senderName}\n senderEmail: ${senderEmail}\n message: ${message}`)
     sendPostEmail(senderName, senderEmail, message);
     document.getElementById("thank-you-message").innerHTML = "Thanks for your message. \nI'll get back to you shortly";
